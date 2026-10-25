@@ -1,0 +1,10 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // A Worker that only serves the static files in site/, at kiwiinit.com.
+  "name": "kiwiinit-com",
+  "compatibility_date": "2026-10-01",
+  "assets": { "directory": "site", "not_found_handling": "404-page" },
+  "routes": [{ "pattern": "kiwiinit.com", "custom_domain": true }],
+  "workers_dev": true,
+  "observability": { "enabled": false }
+}
