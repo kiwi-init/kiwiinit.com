@@ -100,32 +100,22 @@ h1 {
   text-wrap: balance;
 }
 
-.lede {
-  margin-top: 28px;
-  max-width: 34em;
-  color: var(--ink-2);
-  font-size: clamp(17px, 1.4vw, 20px);
-}
-
-/* The spectrum both logos are lit with, as one thin line. */
-.spectrum {
-  height: 2px;
-  width: min(420px, 60%);
-  margin-top: 40px;
-  border-radius: 1px;
-  background: linear-gradient(90deg, var(--spectrum));
-}
-
+/* The two cards share one grid: each card's rows (icon, name, line,
+   requirement, brew line, buttons) are the same rows, so whatever wraps in
+   one card, the other lines up with it. */
 .products {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  /* Between the cards. Each card's own rows keep no gap (row-gap: 0 below). */
   gap: clamp(20px, 2.4vw, 40px);
   padding: clamp(64px, 9vw, 140px) var(--gutter) 0;
 }
 
 .product {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-row: span 6;
+  grid-template-rows: subgrid;
+  row-gap: 0;
   padding: clamp(24px, 3vw, 40px);
   border: 1px solid var(--line);
   border-radius: 10px;
@@ -156,22 +146,17 @@ h2 {
   margin-bottom: 16px;
 }
 
-.product > p {
+.what {
   color: var(--ink-2);
   font-size: 17px;
-  max-width: 34em;
+  margin-bottom: 10px;
 }
 
-.product .needs,
-.product .cli {
+.needs {
   color: var(--ink-3);
   font-family: var(--mono);
   font-size: 12px;
-  margin-bottom: 12px;
-}
-
-.product .cli {
-  margin-top: 4px;
+  margin-bottom: 20px;
 }
 
 .copybox {
@@ -208,23 +193,15 @@ h2 {
   outline: none;
 }
 
-.product .links {
+.product .copybox {
+  margin-bottom: 24px;
+}
+
+.links {
   display: flex;
-  align-items: center;
-  gap: 24px;
-  margin: auto 0 0;
-  padding-top: 12px;
-  font-family: var(--mono);
+  gap: 12px;
+  margin: 0;
   font-size: 14px;
-}
-
-.links a:not(.button) {
-  color: var(--ink-2);
-  text-decoration: none;
-}
-
-.links a:not(.button):hover {
-  color: var(--ink);
 }
 
 /* The light button with the spectrum sheen, as on Channels' site. */
@@ -263,6 +240,39 @@ h2 {
 .button:focus-visible {
   outline: 2px solid var(--ink);
   outline-offset: 3px;
+}
+
+/* The second of the pair: the same size, outlined. */
+.button.quiet {
+  background: none;
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1px #2c2c2c;
+}
+
+.button.quiet::after {
+  display: none;
+}
+
+.button.quiet:hover,
+.button.quiet:focus-visible {
+  background: #0d0d0d;
+  box-shadow: inset 0 0 0 1px #5a5a5a;
+}
+
+/* Channels' CLI alone, under both cards rather than inside one. */
+.cli {
+  padding: clamp(32px, 4vw, 56px) var(--gutter) 0;
+}
+
+.cli p {
+  color: var(--ink-2);
+  font-family: var(--mono);
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.cli .copybox {
+  max-width: 560px;
 }
 
 footer {

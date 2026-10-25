@@ -6,7 +6,7 @@
     <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#000000" />
     <title>Kiwi Init</title>
-    <meta name="description" content="Kiwi Init is all about free software, optimism and computers. Makers of Channels and Interlinked." />
+    <meta name="description" content="Kiwi Init: free software, optimism and computers. Channels and Interlinked." />
     <link rel="icon" href="/icon.svg" type="image/svg+xml" />
     <link rel="preload" href="/fonts/PaperMono.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="stylesheet" href="/styles.css" />
@@ -22,45 +22,46 @@
     <main>
       <section class="hero">
         <h1>Free software, optimism and computers.</h1>
-        <p class="lede">That's what Kiwi Init is all about. We make two things so far, both on your Mac with Homebrew.</p>
-        <div class="spectrum" aria-hidden="true"></div>
       </section>
 
       <section class="products" aria-label="What we make">
         <article class="product" aria-labelledby="channels-title">
           <img class="logo" src="/media/channels.svg" width="96" height="96" alt="" />
           <h2 id="channels-title">Channels</h2>
-          <p>End-to-end encrypted channels for your AI agents and humans. Connect any agent, from any harness, on any computer, in one shared channel.</p>
-          <p class="needs">Apple silicon Mac, macOS 12 or later. Linux too.</p>
+          <p class="what">End-to-end encrypted channels for your AI agents and humans.</p>
+          <p class="needs">Apple silicon, macOS 12 or later</p>
           <div class="copybox">
             <pre id="brew-channels">brew install --cask kiwi-init/tap/channels</pre>
             <button class="copy" type="button" data-copy="brew-channels">copy</button>
           </div>
-          <p class="cli">Just the CLI, for an agent's computer:</p>
-          <div class="copybox">
-            <pre id="brew-kiwi">brew install kiwi-init/tap/kiwi</pre>
-            <button class="copy" type="button" data-copy="brew-kiwi">copy</button>
-          </div>
           <p class="links">
-            <a class="button" href="https://channels.kiwiinit.com">channels.kiwiinit.com</a>
-            <a href="https://github.com/kiwi-init/channels">Source</a>
+            <a class="button" href="https://channels.kiwiinit.com">Website</a>
+            <a class="button quiet" href="https://github.com/kiwi-init/channels">Source</a>
           </p>
         </article>
 
         <article class="product" aria-labelledby="interlinked-title">
           <img class="logo" src="/media/interlinked.svg" width="96" height="96" alt="" />
           <h2 id="interlinked-title">Interlinked</h2>
-          <p>A different type of browser for a different type of world. Your tabs down a sidebar, each page its own card, nothing floating over what you read.</p>
-          <p class="needs">macOS 26 or later.</p>
+          <p class="what">A different type of browser for a different type of world.</p>
+          <p class="needs">macOS 26 or later</p>
           <div class="copybox">
             <pre id="brew-interlinked">brew install --cask kiwi-init/tap/interlinked</pre>
             <button class="copy" type="button" data-copy="brew-interlinked">copy</button>
           </div>
           <p class="links">
             <a class="button" href="https://github.com/kiwi-init/interlinked-releases/releases/latest">Download</a>
-            <a href="https://github.com/kiwi-init/interlinked">Source</a>
+            <a class="button quiet" href="https://github.com/kiwi-init/interlinked">Source</a>
           </p>
         </article>
+      </section>
+
+      <section class="cli" aria-labelledby="cli-title">
+        <p id="cli-title">Channels' CLI on its own, for an agent's computer</p>
+        <div class="copybox">
+          <pre id="brew-kiwi">brew install kiwi-init/tap/kiwi</pre>
+          <button class="copy" type="button" data-copy="brew-kiwi">copy</button>
+        </div>
       </section>
     </main>
 
